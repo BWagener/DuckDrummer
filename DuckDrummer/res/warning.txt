@@ -1,0 +1,11 @@
+PLEASE READ THIS
+AutoDuck is a program that can automate playing the drums in Duck Game.
+It does this by simulating key presses.
+This means that using this program is somewhat risky.
+If you use this program outside of duck game, key strokes WILL be simulated on any focused window.
+So, USE THIS PROGRAM WITH CAUTION. ONLY activate it when you have Duck Game opened & focused.
+To use the default keybinds, change 'up' from 'w' to '3'.
+This is to separate the symbol and the hi-hat.
+Activation/Deactivation shortcut: ALT + K
+
+This program was created by Ronan Hanley and modified by Benedikt Wagener
