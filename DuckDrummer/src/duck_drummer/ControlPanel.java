@@ -26,7 +26,6 @@ public class ControlPanel extends JPanel {
 	private static final long serialVersionUID = -7535525670176986072L;
 	private JTextField bpmField;
 	private JTextField numBeatsField;
-	private JTextField filenameField;
 	private Drummer drummer;
 	private JLabel keyPrompt;
 	private JLabel bpmLabel;
@@ -148,10 +147,7 @@ public class ControlPanel extends JPanel {
 		sep2.setPreferredSize(size);
 		add(sep2);
 
-		JLabel fileNameLabel = new JLabel("File Name :");
-		add(fileNameLabel);
-
-		fileList = new JComboBox<String>(new String[] { "New File" });
+		fileList = new JComboBox<String>(new String[] { "File Name" });
 		fileList.setEditable(true);
 		add(fileList);
 
@@ -160,8 +156,10 @@ public class ControlPanel extends JPanel {
 		saveButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
-				drummer.storeBeats(filenameField.getText());
+				String fileName = fileList.getSelectedItem().toString();
+				drummer.storeBeats(fileName);
 				updateFileList();
+				fileList.setSelectedItem(fileName);
 			}
 		});
 		add(saveButton);
@@ -171,8 +169,10 @@ public class ControlPanel extends JPanel {
 		loadButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent ae) {
-				drummer.retrieveBeats(fileList.getSelectedItem().toString());
+				String fileName = fileList.getSelectedItem().toString();
+				drummer.retrieveBeats(fileName);
 				updateFileList();
+				fileList.setSelectedItem(fileName);
 			}
 		});
 		add(loadButton);

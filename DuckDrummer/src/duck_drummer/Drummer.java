@@ -32,7 +32,7 @@ import com.melloware.jintellitype.HotkeyListener;
 import com.melloware.jintellitype.JIntellitype;
 
 public class Drummer implements HotkeyListener, Runnable {
-	protected static final String version = "v1.2";
+	protected static final String version = "v1.2.1";
 	private static final int activateKey = (int) 'K';
 	private static final int deactivateKey = (int) 'L';
 	private JFrame frame;
@@ -407,7 +407,6 @@ public class Drummer implements HotkeyListener, Runnable {
 			controlPanel.updateBpm(Integer.valueOf(meta[0]));
 			setNumBeats(Integer.parseInt(meta[1]));
 			controlPanel.updateNumBeats(Integer.parseInt(meta[1]));
-//			controlPanel.updateFields();
 			while (scanner.hasNext() && !corruptFile) {
 				beatString.append(scanner.nextLine() + ";");
 			}
